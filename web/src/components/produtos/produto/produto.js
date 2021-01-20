@@ -9,11 +9,11 @@ const Produto = () => {
   const preco = localStorage.getItem('@preco');
   const descricao = localStorage.getItem('@descricao');
   const quantidade = localStorage.getItem('@quantidade');
-  const img = localStorage.getItem('@img');
+  const src = localStorage.getItem('@src');
     return (
         <div className="container">
             <h1 className="titulo">{`Produto: ${titulo}`}</h1>
-            <img src={`${img}`} className="imgproduto"/>
+            <img src={`${src}`} className="imgproduto"/>
             <p><h2 className="preco">{`Preço: R$${preco} reais`}</h2></p>
             <p><h2 className="descricao">{`Descrição: ${descricao} `}</h2></p>
             

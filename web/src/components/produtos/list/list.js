@@ -7,26 +7,26 @@ import './list.css';
 
 
 const ProdutosList = ({loading, produtos, refetch}) =>{
-    const [deleteProduto, deleteProdutoInfo] = useApi({
+  /*   const [deleteProduto, deleteProdutoInfo] = useApi({
         method: 'DELETE',
     });
+ */
 
-    
-
+/* 
     if (produtos === null || deleteProdutoInfo.loading){
         return <div>Carregando...</div>
     }
-
+ */
     return (
         <div className='produtos-list'>
             {produtos.map((produtos =>
                 <ProdutosCard produtos={produtos}
-                onClickDelete={async ()=> {
+                /* onClickDelete={async ()=> {
                     await deleteProduto({
                         url:`/produtos/${produtos.id}`
                     });
                     refetch();
-                }}
+                }} */
                 />
                 ))}
         </div>

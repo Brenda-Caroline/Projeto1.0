@@ -49,10 +49,10 @@ const Form = ({ id }) => {
   function onSubmit(ev) {    
     ev.preventDefault();
 
-    database.ref(`/queijarias/${values.queijaria}/` + uuidv4()).set({
-      // id:'1230', 
-      nome:values.title,
-      url: values.imageUrl,
+    database.ref(`/produtos/` + uuidv4()).set({
+      id:uuidv4(), 
+      nome:values.nome,
+      src: values.imageUrl,
       descricao:values.descricao,
       queijaria:values.queijaria,
       price: values.price,
@@ -108,8 +108,8 @@ const Form = ({ id }) => {
         ) : (
           <form onSubmit={onSubmit} >
             <div className="produtos-form__group">
-              <label htmlFor="title">Nome</label>
-              <input id="title" name="title" type="text" onChange={onChange} placeholder="Insira o nome do produto" />
+              <label htmlFor="nome">Nome</label>
+              <input id="nome" name="nome" type="text" onChange={onChange} placeholder="Insira o nome do produto" />
             </div>
             <div className="produtos-form__group">
               <label htmlFor="price">Preço</label>

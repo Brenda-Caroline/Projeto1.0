@@ -14,7 +14,19 @@ return(
         <Marker position={[-15.73955886649034, -43.02160109591189]}>
           <Popup>
             IFNMG <br /> Campus Porteirinha
-    </Popup>
+          </Popup>
+        </Marker>
+
+        <Marker position={[-15.7345958, -43.0543405]}>
+          <Popup>
+            Requeijão Toko
+          </Popup>
+        </Marker>
+
+        <Marker position={[-15.8313139, -43.0631696]}>
+          <Popup>
+            JC Queijaria
+          </Popup>
         </Marker>
       </MapContainer>
     </div>

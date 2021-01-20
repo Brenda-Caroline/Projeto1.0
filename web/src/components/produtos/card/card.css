@@ -11,13 +11,17 @@
   
   
   .produtos-card__image {
-    max-width: 100px;
+    /* max-width: 100px;
+     */
+    /* height: 100%; */
+    width: 20%;
     margin-right: 20px;
   }
   
   .produtos-card__title {
-    font-size: 16px;
+    font-size: 20px;
     color: #060b26;
+    margin-left: 15px;
   }
   
   .produtos-card__price {
@@ -64,7 +68,7 @@
     justify-content: center;
     display: block;
     margin-top: 0px;
-    margin-left: 215px;
+    margin-left: 195px;
   }
 
   .btn-card__edit{

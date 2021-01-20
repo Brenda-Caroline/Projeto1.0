@@ -6,6 +6,10 @@ import { SidebarData } from './SidebarData';
 import './NavBar.css';
 import { IconContext } from 'react-icons';
 import logomenu from '../imagens/logo.jpg';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/database';
+import 'firebase/storage';
 
 
 
@@ -14,7 +18,14 @@ function Navbar() {
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
-  let Email = localStorage.getItem('@Email');
+  
+  var user = firebase.auth().currentUser;
+  var  email;
+
+if (user != null) {
+   email = user.email;
+ 
+}
 
   return (
     <>
@@ -35,7 +46,7 @@ function Navbar() {
               
             </li>
             <img src={logomenu} className='logomenu'/>
-            <h1 className='bemvindo'>{`Bem vindo ${Email}`}</h1>
+            <h1 className='bemvindo'>{`Bem vindo ${email}`}</h1>
             {SidebarData.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>

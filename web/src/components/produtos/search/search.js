@@ -1,43 +1,75 @@
 import React, { useState, useEffect } from 'react';
-import * as FaIcon from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
-import axios from 'axios';
 import ProdutosList from 'components/produtos/list/list';
 import UIButton from 'components/UI/Button/Button';
-
-import NavBar from 'components/NavBar';
+import { v4 as uuidv4 } from 'uuid';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/database';
+import 'firebase/storage';
+import swal from 'sweetalert';
 
 import { Link } from 'react-router-dom';
 import './search.css'
-import useApi from 'components/utils/useApi';
 
-const baseParams = {
+
+/* const baseParams = {
   _embed: 'comments',
   _order: 'desc',
   _sort: 'id',
   _limit: 5,
-};
+}; */
 
 const ProdutosSearch = () => {
 
   const [produtos, setProdutos] = useState([]);
   const [search, setSearch] = useState('');
-  const [load, loadInfo] = useApi({
+  /* const [load, loadInfo] = useApi({
     debounceDelay: 300,
     url: '/produtos',
     method: 'get',
-  })
+  }) */
+  const temp=[]
+  
+  const getData = async()=>{
+        
+    /* await firebase.database().ref('/produtos').once('value', (snap)=> {
+      snap.forEach((item)=> {
+        temp.push(item.val())
+      })
+    }); */
+  
+    await firebase.database().ref(`/produtos`).once('value').then((snapshot)=>{
+      snapshot.forEach((item)=> {
+        temp.push(item.val());
+      })
+    });
+    console.log("oi", temp);
+    setProdutos(temp);
+  }
+
+
 
   useEffect(() => {
+    
+    
+
     const params = {};
     if (search) {
       params.title_like = search;
     }
-    axios.get('http://localhost:4000/produtos?_embed=comments&_order=desc&_sort=id', { params })
+    /* axios.get('http://localhost:4000/produtos?_embed=comments&_order=desc&_sort=id', { params })
       .then((response) => {
         setProdutos(response.data);
-      });
-  }, [search]);
+      }); */
+      
+      getData();
+
+     
+
+      
+  }, []);
+
+
 
 
   return (
@@ -58,6 +90,7 @@ const ProdutosSearch = () => {
                 </div>
 
       </header>
+      
       <input
         className="produtos-search__input"
         type="search"
@@ -65,16 +98,21 @@ const ProdutosSearch = () => {
         value={search}
         onChange={(ev) => setSearch(ev.target.value)}
       />
+<p>
+  {JSON.stringify(produtos)}
+</p>
+      {/* EXIBINDO PRODUTOS */}
       <ProdutosList
         produtos={produtos}
-        loading={!produtos.length}
+        /* loading={!produtos.length}
         refetch={() => {
           load({
             params: baseParams
           })
-        }}
+        }} */
       />
     </div>
+
   )
 };
 

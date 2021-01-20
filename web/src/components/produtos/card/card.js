@@ -10,10 +10,10 @@ import ReactStars from "react-rating-stars-component";
 import 'components/produtos/list/list.js';
 
 const verproduto = (produtos)=> {
-  localStorage.setItem('@titulo', produtos.title);
+  localStorage.setItem('@titulo', produtos.nome);
   localStorage.setItem('@preco', produtos.price);
   localStorage.setItem('@descricao', produtos.descricao);
-  localStorage.setItem('@img', produtos.imageUrl);
+  localStorage.setItem('@src', produtos.src);
   localStorage.setItem('@quantidade', produtos.quantidade);
 }
 
@@ -32,14 +32,14 @@ starCountRef.on('value', (snapshot) =>{
 });
  */
 
-const ProdutosCard = ({ produtos, onClickDelete }) => (
+const ProdutosCard = ({ produtos, onClickDelete, id }) => (
  
 
-  <div className="produtos-card">
+  <div className="produtos-card" >
     
-    <img src={produtos.imageUrl} alt={produtos.title} className="produtos-card__image" />
+    <img src={produtos.src} alt={produtos.src} className="produtos-card__image" />
     <div className="produtos-card__info">
-      <h1 className="produtos-card__title" id="titulo">{produtos.title}</h1>
+      <h1 className="produtos-card__title" id="titulo">{produtos.nome}</h1>
       <span className="produtos-card__price" >R$ {produtos.price}</span>
       <br></br>
       <span className='avaliacao'>Avaliação<ReactStars
@@ -61,13 +61,13 @@ const ProdutosCard = ({ produtos, onClickDelete }) => (
         <div className="btn-card">
         <UIButton
           component={Link}
-          to={`/produto/${produtos.id}`}
+          to={`/produto/${id}`}
         onClick={()=>verproduto(produtos)}>
           Ver Produto
         </UIButton>
         <UIButton
           component={Link}
-          to={`/edit/${produtos.id}`}
+          to={`/edit/${id}`}
           className="btn-card__edit"
         >Editar</UIButton>
 
