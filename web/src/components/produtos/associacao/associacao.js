@@ -4,6 +4,7 @@ import logo from '../associacao/logo.jpg';
 
 
 const Associacao = () => {
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
     return (
         <div>
             <img src={logo} className='logohistoria'/>

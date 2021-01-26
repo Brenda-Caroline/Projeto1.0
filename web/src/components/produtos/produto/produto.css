@@ -14,11 +14,10 @@
   
   
   .imgproduto{
-    max-width: 200px;
+    width: 25%;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    
   }
   
   .titulo {

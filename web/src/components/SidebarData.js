@@ -9,7 +9,7 @@ import 'firebase/auth';
 import 'firebase/database';
 import 'firebase/storage';
 
-const Email = localStorage.getItem('@Email');
+/* const Email = localStorage.getItem('@Email');
 
 function logout(e){
 
@@ -33,7 +33,7 @@ function logout(e){
 
     e.preventDefault();
   
-}
+} */
 
 var firebaseConfig = {
   apiKey: "AIzaSyBjE_PJfjPOQj5Z62oYHEzjEXMy8FetW-Q",
@@ -44,6 +44,16 @@ var firebaseConfig = {
     appId: "1:700330184648:web:5888ea46e92bc029f7fafd",
     measurementId: "G-Y6DHRX9M37"
 };
+function logout(){
+
+  firebase.auth().signOut().then(function() {
+    swal('Deslogado com sucesso!');
+  }).catch(function(error) {
+    swal(error);
+  });
+
+}
+
 
 if(!firebase.apps.length){
   // Initialize Firebase

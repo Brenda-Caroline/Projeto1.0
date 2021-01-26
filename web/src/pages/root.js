@@ -27,6 +27,7 @@ const Root = () => {
         <Router history={history}>
             <NavBar />
             <Switch>
+            
                 <PrivateRoute exact  path="/create" component={PagesProdutosForm} />
                 <Route exact path="/login" component={PagesLoginForm}/>
                 <Route exact path="/associacao" component={PagesAssociacao}/>
@@ -45,6 +46,7 @@ const Root = () => {
                
                 
             </Switch>
+            
         </Router>
     );
 

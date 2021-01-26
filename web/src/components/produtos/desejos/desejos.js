@@ -2,6 +2,7 @@ import React from 'react';
 
 
 const Desejos = () => {
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
     return (
         <div>
             <h1>Lista de Desejos</h1>

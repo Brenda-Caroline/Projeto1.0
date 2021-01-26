@@ -20,6 +20,7 @@ import './search.css'
 }; */
 
 const ProdutosSearch = () => {
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 
   const [produtos, setProdutos] = useState([]);
   const [search, setSearch] = useState('');
@@ -43,13 +44,15 @@ const ProdutosSearch = () => {
         temp.push(item.val());
       })
     });
-    console.log("oi", temp);
+    console.log("produtos:", temp);
     setProdutos(temp);
+    
   }
 
 
 
   useEffect(() => {
+
     
     
 
@@ -73,20 +76,24 @@ const ProdutosSearch = () => {
 
 
   return (
+    
 
     <div className="produtos-search">
+      
       <header className="produtos-search__header">
       <div className="titles">
         <h1>Produtos Cadastrados</h1>
+      </div>
+      <div className="bt">
         <UIButton className="btn"
           component={Link} to={"/login"} theme="contained-green">
           Fazer Login
                 </UIButton>
 
-        <UIButton className="btn1"
+        {/* <UIButton className="btn1"
           component={Link} to={"/create"} theme="contained-green">
           Cadastrar um Produto
-                </UIButton>
+                </UIButton> */}
                 </div>
 
       </header>
@@ -99,7 +106,7 @@ const ProdutosSearch = () => {
         onChange={(ev) => setSearch(ev.target.value)}
       />
 <p>
-  {JSON.stringify(produtos)}
+  {/* {JSON.stringify(produtos)} */}
 </p>
       {/* EXIBINDO PRODUTOS */}
       <ProdutosList

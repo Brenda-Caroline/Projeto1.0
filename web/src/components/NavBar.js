@@ -10,6 +10,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
 import 'firebase/storage';
+import Menu from '@material-ui/core/Menu';
 
 
 
@@ -18,14 +19,18 @@ function Navbar() {
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
-  
+  //let Email = localStorage.getItem('@Email');
+
   var user = firebase.auth().currentUser;
-  var  email;
+  var email;
 
 if (user != null) {
-   email = user.email;
- 
+  email = user.email;
+}else{
+  email="";
+  
 }
+
 
   return (
     <>

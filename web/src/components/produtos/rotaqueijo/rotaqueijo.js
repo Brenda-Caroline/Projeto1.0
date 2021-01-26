@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
 const RotaQueijo = () => {
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 return(
   <div style={{ height: 800 }}>
     <h1>Rota do Queijo em Porteirinha</h1>

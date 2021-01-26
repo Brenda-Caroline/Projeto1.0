@@ -49,8 +49,10 @@ const Form = ({ id }) => {
   function onSubmit(ev) {    
     ev.preventDefault();
 
-    database.ref(`/produtos/` + uuidv4()).set({
-      id:uuidv4(), 
+    const id = uuidv4();
+    
+    database.ref(`/produtos/` + id ).set({
+      id: id,
       nome:values.nome,
       src: values.imageUrl,
       descricao:values.descricao,
@@ -58,6 +60,9 @@ const Form = ({ id }) => {
       price: values.price,
       quantidade: values.quantidade,
     }).then(()=>alert('Cadastrado com sucesso!')).catch((err)=>alert('Erro ao cadastrar: ' + err));
+  
+  
+  
   }
 
   const handleChange = e => {
@@ -95,7 +100,7 @@ const Form = ({ id }) => {
     );
   };
 
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
   return (
     <div className="App-form">
       <div className="produtos-title">

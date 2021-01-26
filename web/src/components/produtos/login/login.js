@@ -64,6 +64,7 @@ const LoginForm = () => {
   firebase.initializeApp(firebaseConfig);    
   }
  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
   return (
     <div className="App-form">
       <h1>LOGIN</h1>
@@ -80,11 +81,16 @@ const LoginForm = () => {
         
       </form> 
       <div className="App-form">
-          <button type="submit" onClick={login}>Logar</button> <br></br>
-          <UIButton className="btn1"
-          component={Link} to={"/cadastro"} theme="contained-green">
-          Primeira vez por aqui? Crie uma conta gratuitamente!
+         
+
+          <UIButton type="submit" className="btn"
+          component={Link} to={"/"}  onClick={login}>
+          Login
                 </UIButton>
+
+                <br></br>
+
+        <a href="/cadastro"> Primeira vez por aqui? Crie uma conta gratuitamente! </a>
 
 
         </div>

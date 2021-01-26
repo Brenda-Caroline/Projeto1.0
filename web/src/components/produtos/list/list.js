@@ -7,6 +7,8 @@ import './list.css';
 
 
 const ProdutosList = ({loading, produtos, refetch}) =>{
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
   /*   const [deleteProduto, deleteProdutoInfo] = useApi({
         method: 'DELETE',
     });

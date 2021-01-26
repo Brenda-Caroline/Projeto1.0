@@ -5,6 +5,7 @@ import './produto.css';
 
 
 const Produto = () => {
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
   const titulo = localStorage.getItem('@titulo');
   const preco = localStorage.getItem('@preco');
   const descricao = localStorage.getItem('@descricao');
