@@ -1,0 +1,62 @@
+.App-form{
+    
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    align-items: center;
+    
+    
+
+}
+.produtos-form__group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.produtos-form__group label{
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+}
+
+.produtos-form__group input{
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    background-color: #fff;
+    height: 36px;
+    width: 300px;
+}
+
+.produtos-form__group textarea{
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    background-color: #fff;
+    height: 100px;
+    width: 300px;
+
+}
+
+.produtos-title{
+    color:#060b26;
+    margin-right: 8%;
+}
+
+.produtos-title h1{
+   text-align: center;
+    
+}
+
+.produtos-form__group select{
+    width: 83.5%;
+}
+
+.up{
+    margin-left:5px;
+    
+}
+
+.produtos-form__group_salvar{
+    width: 84%; 
+}
