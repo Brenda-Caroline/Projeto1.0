@@ -12,12 +12,12 @@
   
 }
 
-/* @media only screen and (max-width: 400px) {
+ @media only screen and (max-width: 500px) {
   .produtos-card{
-    width: 91.8%;
+    width: 92.8%;
    
   }
-} */
+} 
 
 
 .produtos-card__image {

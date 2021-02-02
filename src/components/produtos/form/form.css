@@ -40,7 +40,7 @@
 
 .produtos-title{
     color:#060b26;
-    margin-right: 8%;
+    
 }
 
 .produtos-title h1{
@@ -49,14 +49,33 @@
 }
 
 .produtos-form__group select{
-    width: 83.5%;
+    width: 100%;
 }
 
 .up{
-    margin-left:5px;
-    
+    margin-top: 5%;
 }
 
+.im {
+    text-align: center;
+    width: 100%;
+}
+
+
 .produtos-form__group_salvar{
-    width: 84%; 
+    width:100%; 
+}
+.bot{
+    text-align: center;
+    background-color:  #060b26;
+    border: none;
+    color:#fff;
+    padding-left: 10%;
+    padding-right: 10%;
+    
+    
+}
+.botao{
+    text-align: center;
+    
 }
