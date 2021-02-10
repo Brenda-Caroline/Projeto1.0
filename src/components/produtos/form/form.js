@@ -100,6 +100,10 @@ const Form = ({ id }) => {
   };
 
 
+    function redireciona(){
+      window.location.href = "/"
+    } 
+
   return (
     <div className="App-form">
       <div className="produtos-title">
@@ -160,12 +164,14 @@ const Form = ({ id }) => {
                 <br />
                 {/* <img src={url || "http://via.placeholder.com/300"} alt="firebase-image" width="120px" height="120px" /> */}
               </div>
-              
-                <div className="botao">
-              {/* <UIButton className="produtos-form__group_salvar" type="submit">Salvar</UIButton> */}
+              <div className="sal">
+              <button className="produtos-form__group_salvar" type="submit" onClick={redireciona}> Salvar</button>
+                {/* <div className="botao">
+              {/* <UIButton className="produtos-form__group_salvar" type="submit">Salvar</UIButton> 
                 <UIButton className="bot" component={Link} to={"/"} theme="contained-green">
                 Salvar
                 </UIButton>
+                </div> */}
                 </div>
             
             </div>

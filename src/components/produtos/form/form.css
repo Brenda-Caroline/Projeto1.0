@@ -12,6 +12,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
+    
 }
 
 .produtos-form__group label{
@@ -19,6 +20,7 @@
     font-size: 14px;
     font-weight: 500;
     color: #555;
+    
 }
 
 .produtos-form__group input{
@@ -54,6 +56,7 @@
 
 .up{
     margin-top: 5%;
+    cursor: pointer;
 }
 
 .im {
@@ -61,10 +64,23 @@
     width: 100%;
 }
 
+.sal{
+    text-align: center;
+}
 
 .produtos-form__group_salvar{
-    width:100%; 
+    width:50%;
+    text-align: center; 
+    font-size: 100%;  
+    background-color:  #060b26;
+    border: none;
+    color:#fff;
+    padding-top: 3%;
+    padding-bottom: 3%; 
+    border-radius: 5px;
+    cursor: pointer;
 }
+
 .bot{
     text-align: center;
     background-color:  #060b26;

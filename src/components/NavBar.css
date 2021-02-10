@@ -7,6 +7,18 @@
     align-items: center;
    
   }
+  .titulo{
+    padding-left: 30%;
+    color: #fff;
+    padding-right: 35%; 
+    width: 50%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .titulo{
+      padding-left: 23%;
+    }
+  } 
 
   .logomenu{
     border-radius: 800px;
@@ -15,6 +27,7 @@
     margin-left: auto;
     margin-right: auto;
     border: 2px solid rgb(185, 147, 23);
+    
 }
 
 
@@ -27,9 +40,16 @@
   
   .menu-bars {
     margin-left: 2rem;
-    font-size: 2rem;
+    font-size: 2rem; 
     background: none;
   }
+
+  @media only screen and (max-width: 600px) {
+    .menu-bars{
+      margin-left: 1rem;
+     
+    }
+  } 
   
   .nav-menu {
     background-color: #060b26;

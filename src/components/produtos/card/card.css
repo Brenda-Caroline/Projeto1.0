@@ -4,7 +4,7 @@
   box-shadow: 0 2px 7px 0 rgba(0,0,0, 0.15);
   display: flex;
   padding: 15px;
-  width: 96%;
+  width: 98.8%;
   align-items: flex-start;
   margin-bottom: 20px;
   position: relative;
@@ -12,20 +12,21 @@
   
 }
 
- @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 500px) {
   .produtos-card{
-    width: 92.8%;
+    width: 92%;
    
   }
 } 
 
-
+ 
 .produtos-card__image {
   /* max-width: 100px;
    */
   /* height: 100%; */
   width: 20%;
-  margin-right: 20px;
+  margin-right: 0px;
+  
 }
 
 .produtos-card__title {
@@ -36,14 +37,6 @@
   
 } 
 
-/* @media only screen and (max-width: 400px) {
-  .produtos-card__title{
-   /* background-color: yellow; 
-   font-size: 15px;
-   margin-left: 8px;
-  }
-} */
-
 .produtos-card__price {
   font-size: 26px;
   font-weight: 700;
@@ -51,82 +44,42 @@
   flex:1;
 }
 
-/* @media only screen and (max-width: 400px) {
-  .produtos-card__price{
-   /* background-color: yellow; 
-   font-size: 20px;
-   margin-left: 8px; 
-  }
-} */
-
 .produtos-card__footer {
-  /* display: block;
-  align-items: center; 
-  justify-content: center;   */
   margin-top: 5%;
   text-align: start; 
-  margin-left: 5%;
-  width: 100%; 
-  
+  margin-left: 5%;  
 }
 
-/* .produtos-card__comment {
-  color: #95A5A6;
-  
-  font-weight: 300;
-  flex:1;
+.verP{
+    background-color: unset;  
+    border-radius: 4px;
+    color:black; 
+    padding: 8px 10px;
+    flex: 1;
+    white-space: nowrap; 
+    border: 1px solid #060b26; 
+    font-size: 80%;
+    margin-left: 15px;
+    margin-top: 10px;
 }
 
-.produtos-card__comments-count {
-  margin-left: auto;
-  margin-right: 10px;
-  color: #060b26;
-  flex:1;
-}
-
-.produtos-card__link {
-  border: 1px solid #060b26;
-  border-radius: 4px;
-  color: #060b26;
-  text-decoration: none;
-  padding: 8px 10px;
-  margin-right: 20px;
-  flex:1;
-} */
-
-
-
-/* .btn-card{
-  background-color: hotpink;
-  /* text-align: left; 
-  align-items: center; 
-  justify-content: center; 
-  /* margin-left: 400px; */
-  /* display: block; */
-  /* margin-top: 0px;
-  justify-content: flex-start; 
-} */
-
-/* @media only screen and (max-width: 400px) {
-  .btn-card{
-     margin-right: 50%; 
-     background-color: pink; 
-   
-  }
-}  */
 .favorite{
   align-items: center;
   justify-content: center;
   display: block;
   margin-top: 0px;
   margin-left: 10%;
-  
   flex:1;
 }
 
 .btn-card__edit{
-  margin-left: 8px;
-  flex:1;
+    background-color: unset;  
+    border-radius: 4px;
+    color:black; 
+    padding: 8px 10px; 
+    flex: 1;
+    white-space: nowrap; 
+    border: 1px solid #060b26; 
 }
 
 .produtos-card__delete-button{

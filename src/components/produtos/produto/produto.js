@@ -12,7 +12,7 @@ const Produto = () => {
   const descricao = localStorage.getItem('@descricao');
   const quantidade = localStorage.getItem('@quantidade');
   const src = localStorage.getItem('@src');
-  const id = localStorage.getItem('@idprod');
+  const id = localStorage.getItem('@id');
   const queijaria = localStorage.getItem('@queijaria');
     return (
         <div className="container">

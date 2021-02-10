@@ -1,9 +1,9 @@
 import React from 'react';
 import './card.css';
-import {Link} from "react-router-dom";
-import {BiTrash} from 'react-icons/bi';
+import { Link } from "react-router-dom";
+import { BiTrash } from 'react-icons/bi';
 import UIButton from 'components/UI/Button/Button';
-import {isLogged} from 'components/utils/auth';
+import { isLogged } from 'components/utils/auth';
 import swal from 'sweetalert';
 import ReactStars from "react-rating-stars-component";
 import 'components/produtos/list/list.js';
@@ -23,7 +23,7 @@ const verproduto = (produtos) => {
   localStorage.setItem('@src', produtos.src);
   localStorage.setItem('@quantidade', produtos.quantidade);
   localStorage.setItem('@queijaria', produtos.queijaria);
- 
+
 }
 /* 
 const deleting = () =>{
@@ -34,7 +34,7 @@ const deleting = () =>{
 
 let id = localStorage.getItem("@idproduto");
 
-const ratingChanged = (newRating) =>{
+const ratingChanged = (newRating) => {
   console.log(newRating);
 }
 
@@ -49,57 +49,73 @@ starCountRef.on('value', (snapshot) =>{
 
 
 
+function editar(){
+  window.location.href = `/edit/${id}`
+}
 
- 
 
-const ProdutosCard = ({ produtos}) => (
- 
-  
+const ProdutosCard = ({ produtos }) => {
 
-  <div className="produtos-card" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-    <img src={produtos.src} alt={produtos.src} className="produtos-card__image" />
-    <div className="produtos-card__info">
-      <h1 className="produtos-card__title" id="titulo">{produtos.nome}</h1>
-      <span className="produtos-card__price" >R$ {produtos.price}</span>
-      <br></br>
+  const handleDelete = async (id) => {
+    // alert(id)
+    try {
+      await firebase.database().ref('/produtos/' + id).remove();
+      alert('Deletado com sucesso');
+    } catch (error) {
+      alert('Erro ao deletar: ' + error)
+    }
+  }
 
-      {isLogged()? <span className='avaliacao'>Avaliação<ReactStars
-          count={5}
-          onChange={ratingChanged}
-          size={24}
-          isHalf={true}
-          emptyIcon={<i className="far fa-star"></i>}
-          halfIcon={<i className="fa fa-star-half-alt"></i>}
-          fullIcon={<i className="fa fa-star"></i>}
-          activeColor="#ffd700"
-          /></span>
-          : null}
+  return (
 
+    <div className="produtos-card" >
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+      <img src={produtos.src} alt={produtos.src} className="produtos-card__image" />
+      <div className="produtos-card__info">
+        <h1 className="produtos-card__title" id="titulo">{produtos.nome}</h1>
+        <span className="produtos-card__price" >R$ {produtos.price}</span>
+        <br></br>
+
+        {/* {isLogged()? <span className='avaliacao'>Avaliação<ReactStars
+            count={5}
+            onChange={ratingChanged}
+            size={24}
+            isHalf={true}
+            emptyIcon={<i className="far fa-star"></i>}
+            halfIcon={<i className="fa fa-star-half-alt"></i>}
+            fullIcon={<i className="fa fa-star"></i>}
+            activeColor="#ffd700"
+            /></span>
+            : null} */}
+
+
+          {/* <footer className="produtos-card__footer">   */}
+
+            <button className="verP" onClick={() => window.location.href = `/produto/${id}`}> Ver Produto </button>
+          {/* <UIButton className="verP" component={Link} to={`/produto/${id}`}
+            onClick={() => verproduto(produtos)}>
+            Ver Produto
+          </UIButton> */}
+          {/* function redireciona(){
+      window.location.href = "/"
+    }  */}
+
+
+
+           {isLogged() ?  <button className="btn-card__edit" onClick={ editar}>
+            Editar</button> : null}  
           
-        <footer className="produtos-card__footer">
-          
-         
-         <UIButton 
-          component={Link}
-          to={`/produto/${id}`}
-        onClick={()=>verproduto(produtos)}>
-          Ver Produto
-        </UIButton> 
-         
-        
-       
-         {isLogged()?<UIButton component={Link} to={`/edit/${id}`} className="btn-card__edit" >Editar</UIButton> : null }
-        {isLogged()?<div className="favorite" > Favoritar </div> : null}
-        
-        
-        
-      </footer>  
+          {/* <UIButton component={Link} to={`/edit/${id}`} className="btn-card__edit" >Editar</UIButton> */} 
+          {/* {isLogged() ? <div className="favorite" > Favoritar </div> : null} */}
+
+
+          {/* </footer>  */} 
+
       
-
-       {isLogged()?<button type="button" className="produtos-card__delete-button" > <BiTrash/> </button> : null}
-     </div> 
-  </div>
+        {isLogged() ? <button onClick={() => handleDelete(produtos.id)} type="button" className="produtos-card__delete-button" > <BiTrash /> </button> : null}
+      </div>
+    </div>
   );
+}
 
 export default ProdutosCard;
