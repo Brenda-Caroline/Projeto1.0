@@ -66,9 +66,9 @@ const LoginForm = () => {
  
   return (
     <div className="App-form">
-      <h1>LOGIN</h1>
+      <h1 className="log" >LOGIN</h1>
 
-     <form className="App-form">
+     <form className="Campos">
         <div className="produtos-form__group">
           <label htmlFor="Email">Email</label>
           <input id="Email" name="Email" type="text" />
@@ -79,7 +79,7 @@ const LoginForm = () => {
         </div>
         
       </form> 
-      <div className="App-form">
+      <div className="Bot">
          
 
           <UIButton type="submit" className="blogin"
@@ -89,9 +89,10 @@ const LoginForm = () => {
 
                 <br></br>
 
-        <a href="/cadastro"> Primeira vez por aqui? Crie uma conta gratuitamente! </a>
+        <div className="link">
+        <a href="/cadastro" > Primeira vez por aqui? Crie uma conta gratuitamente! </a>
 
-
+        </div>
       </div>
       
     </div>

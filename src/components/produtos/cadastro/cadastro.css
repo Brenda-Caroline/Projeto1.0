@@ -1,11 +1,13 @@
-.App-header{
+/* .App-header{
     justify-content: center;
     align-items: center;
-    display: block;
-
+    display: flex;
+    
 }
+
 .Titulo{
 color:#060b26;
+
 }
 
 .texto{
@@ -13,6 +15,7 @@ margin-bottom: 5px;
 font-size: 14px;
 font-weight: 500;
 color: #555;
+
 }
 
 .campos{
@@ -20,14 +23,104 @@ border: 1px solid #aaa;
 border-radius: 8px;
 background-color: #fff;
 height: 36px;
-width: 100%;
+width: 98%;
+
 }
 
 .lab{
     justify-content: center;
     align-items: center;
+    
 }
 
-.btn{
+.button{
+    background-color:  #060b26;
+    border: none;
+    color:#fff;
+    cursor:pointer;
+}
+ */
+
+ .App-form{
+    
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    align-items: center;
+    
+    
+
+}
+.produtos-form__group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    
+}
+
+.produtos-form__group label{
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+}
+
+.produtos-form__group input{
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    background-color: #fff;
+    height: 36px;
+    width: 300px;
+}
+
+.produtos-form__group textarea{
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    background-color: #fff;
+    height: 100px;
+    width: 300px;
+
+}
+
+.produtos-title{
+    color:#060b26;
+    
+}
+
+.produtos-title h1{
+   text-align: center;
+    
+}
+
+.produtos-form__group select{
+    width: 100%;
+}
+
+.up{
+    margin-top: 5%;
+}
+
+.im {
+    text-align: center;
+    width: 100%;
+}
+
+
+.produtos-form__group_salvar{
+    width:100%;
+    text-align: center; 
+}
+.bot{
+    text-align: center;
+    background-color:  #060b26;
+    border: none;
+    color:#fff;
+    padding-left: 10%;
+    padding-right: 10%;
+    
+    
+}
+.botao{
+    text-align: center;
     
 }

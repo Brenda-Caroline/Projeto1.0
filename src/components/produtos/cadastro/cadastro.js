@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import "./cadastro.css";
 import firebase from 'firebase/app';
 import 'firebase/auth';
@@ -70,7 +70,7 @@ function onSubmit(ev) {
     senha:values.senha,
     
   }).then(()=>alert('Cadastrado com sucesso!')).catch((err)=>alert('Erro ao cadastrar: ' + err));
-} */
+} 
  
 
 const Cadastro = () => {
@@ -95,35 +95,35 @@ const Cadastro = () => {
     return (
         <div>
             <header className="App-header">
-            <form className="App-form" target="_blank" method="get"  > {/*  onSubmit={onSubmit } */}
+            <form className="App-form" target="_blank" method="get"  > {/*  onSubmit={onSubmit } 
           <label className="lab">
         
           <div className="Titulo">
           <h1>Cadastro de Usuários</h1>
           </div>
            <p className="texto">Nome: </p>
-          <input type="text" name="nome" id="nome" /* onChange={onChange} value={values.nome} */ placeholder="Insira o nome" className="campos" required/>
+          <input type="text" name="nome" id="nome" /* onChange={onChange} value={values.nome}  placeholder="Insira o nome" className="campos" required/>
             <br></br>
           
           <p className="texto">Email: </p>
-          <input type= "text" name="Email" id="Email" /* onChange={onChange} value={values.email} */ className="campos" placeholder="Insira o seu email" required/>
+          <input type= "text" name="Email" id="Email" /* onChange={onChange} value={values.email}  className="campos" placeholder="Insira o seu email" required/>
             <br></br>
           
           <p className="texto">Telefone: </p>
-          <input type= "tel" name="telefone" id="telefone" /* onChange={onChange} value={values.telefone} */ className="campos" placeholder="(xx) xxxxx-xxxx" required/>
+          <input type= "tel" name="telefone" id="telefone" /* onChange={onChange} value={values.telefone}  className="campos" placeholder="(xx) xxxxx-xxxx" required/>
             <br></br>
           <p className="texto">Endereço: </p>
-          <input type= "text" name="endereco" id="endereco" /* onChange={onChange} value={values.endereco} */ className="campos" placeholder="Insira um endereço" required/>
+          <input type= "text" name="endereco" id="endereco" /* onChange={onChange} value={values.endereco} className="campos" placeholder="Insira um endereço" required/>
             <br></br>
           {/* <p className="texto">Usuário: </p>
           <input type= "text" name="usuario" className="campos" placeholder="Insira um usuário" required/>
-            <br></br> */}
+            <br></br> 
            
            {/* <p className="texto">Email: </p>
           <input type= "text" id="Email" className="campos" placeholder="Insira um Email" required/>
-            <br></br> */}
+            <br></br> 
             <p className="texto">Senha:</p>  
-          <input type= "password" id="Senha" className="campos" /* onChange={onChange} value={values.senha} */ placeholder="Insira uma senha" required/>
+          <input type= "password" id="Senha" className="campos" /* onChange={onChange} value={values.senha}  placeholder="Insira uma senha" required/>
             <br></br>
           
 
@@ -134,20 +134,20 @@ const Cadastro = () => {
 
 
           <p className="texto"> Cliente: </p>
-          <input type="radio" name="pessoa" value="cliente" id="cliente"/> */}
+          <input type="radio" name="pessoa" value="cliente" id="cliente"/> *
          
         <br></br>
         
 
-         {/*    <button type="submit" onClick={cadastrar}>Cadastrar</button> */}
+         {/*    <button type="submit" onClick={cadastrar}>Cadastrar</button> 
 
       
     
             {/* 
             <input type="reset" className="botao" value="Limpar Campos" />
-             */}
+             
           </label>
-          <UIButton type="submit" className="btn"
+          <UIButton type="submit" className="button"
            onClick={cadastrar}>
           Cadastrar
                 </UIButton>
@@ -162,4 +162,145 @@ const Cadastro = () => {
         
     )
 };
+export default Cadastro; */
+
+import React, { useState, useEffect } from 'react';
+import { useHistory, Redirect } from 'react-router-dom';
+import axios from 'axios';
+import { storage,database } from '../firebase/index.js';
+import './cadastro.css';
+import swal from 'sweetalert';
+import { v4 as uuidv4 } from 'uuid';
+import UIButton from 'components/UI/Button/Button';
+import {Link} from "react-router-dom";
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/database';
+import 'firebase/storage';
+
+
+const initialValue = {
+  nomequeijaria: '',
+  nomeprodutor: '',
+  endereco: '',
+  email: '',
+  senha: '',
+}
+
+const Cadastro = ({ id }) => {
+
+  const [values, setValues] = useState(id ? null : initialValue);
+  
+
+  const history = useHistory();
+
+
+  function onChange(ev) {
+    const { name, value } = ev.target;
+
+    setValues({ ...values, [name]: value });
+  }
+
+  function onSubmit(ev) {  
+    
+    const Email = document.getElementById("email").value
+    const Senha = document.getElementById("senha").value
+  
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(Email, Senha)
+      .then(()=>{
+        swal("Cadastrado com sucesso!")
+         .then(()=>{
+          setTimeout(()=>{
+            window.location.replace('/')
+          },1000)
+        })
+      })
+      .catch((error)=>{
+        swal(error.message)
+      })
+      
+    
+    ev.preventDefault();
+
+    const id = uuidv4();
+
+    database.ref(`/queijarias/` + id ).set({
+      id: id,
+      nomequeijaria:values.nomequeijaria,
+      nomeprodutor: values.nomeprodutor,
+      endereco: values.endereco,
+      email:values.email,
+      senha:values.senha,
+    }).then(()=>alert('Cadastrado com sucesso!')).catch((err)=>alert('Erro ao cadastrar: ' + err));
+  
+    
+  
+  }
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyBjE_PJfjPOQj5Z62oYHEzjEXMy8FetW-Q",
+    authDomain: "banco-de-dados-queijos.firebaseapp.com",
+    projectId: "banco-de-dados-queijos",
+    storageBucket: "banco-de-dados-queijos.appspot.com",
+    messagingSenderId: "700330184648",
+    appId: "1:700330184648:web:5888ea46e92bc029f7fafd",
+    measurementId: "G-Y6DHRX9M37"
+  };
+  
+  if(!firebase.apps.length){
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);    
+  }
+
+  return (
+    <div className="App-form">
+      <div className="produtos-title">
+        <h2 >Cadastro de Queijarias</h2>
+      </div>
+      {!values
+        ? (
+          <div>Carregando...</div>
+        ) : (
+          <form onSubmit={onSubmit} >
+            <div className="produtos-form__group">
+              <label htmlFor="nomequeijaria">Nome da Queijaria</label>
+              <input id="nomequeijaria" name="nomequeijaria" type="text" onChange={onChange} value={values.nomequeijaria} />
+            </div>
+            <div className="produtos-form__group">
+              <label htmlFor="nomeprodutor">Nome do Produtor</label>
+              <input id="nomeprodutor" name="nomeprodutor" type="text" onChange={onChange} value={values.nomeprodutor} />
+            </div>
+            <div className="produtos-form__group">
+              <label htmlFor="endereco">Endereço</label>
+              <input id="endereco" name="endereco" type="text" onChange={onChange} value={values.endereco} />
+            </div>
+            <div className="produtos-form__group">
+              <label htmlFor="email">Email</label>
+              <input id="email" name="email" type="text" onChange={onChange} value={values.email} />
+            </div>
+            <div className="produtos-form__group">
+              <label htmlFor="senha">Senha</label>
+              <input id="senha" name="senha" type="password" onChange={onChange} value={values.senha} />
+            </div>
+            
+            <br></br>
+           
+            <br></br>
+            
+            <UIButton type="submit" className="btn"
+           onClick={onSubmit}>
+          Cadastrar
+                </UIButton>
+            <div>
+              
+
+            </div>
+          </form>
+        )}
+    </div>
+  )
+}
+
 export default Cadastro;

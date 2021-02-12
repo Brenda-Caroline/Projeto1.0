@@ -157,7 +157,7 @@ const Form = ({ id }) => {
                 <br />
                 <br />
 
-                <input type="file" onChange={handleChange} /><br></br>
+                <input type="file" onChange={handleChange} className="escolher"/><br></br>
                 <button className="up" onClick={handleUpload}>Upload</button>
                 <br />
                 {/* {url} */}

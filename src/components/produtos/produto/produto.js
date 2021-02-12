@@ -23,9 +23,9 @@ const Produto = () => {
             <p><h2 className="queijaria">{`Queijaria: ${queijaria} `}</h2></p>
 
         {/* <p><h2>Id: {`${id}`}</h2></p>
-         */}    <p className="quantidade">
+         */}    {/* <p className="quantidade">
             {quantidade < 1 ? 'Sem estoque no momento' : `Quantidade disponível: ${quantidade}`}
-            </p>
+            </p> */}
             <div className="botao">
             <UIButton  component={Link} to={'/'}> Voltar </UIButton>
             </div>

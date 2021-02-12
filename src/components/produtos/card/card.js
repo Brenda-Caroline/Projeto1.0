@@ -23,7 +23,7 @@ const verproduto = (produtos) => {
   localStorage.setItem('@src', produtos.src);
   localStorage.setItem('@quantidade', produtos.quantidade);
   localStorage.setItem('@queijaria', produtos.queijaria);
-
+  
 }
 /* 
 const deleting = () =>{
@@ -46,8 +46,9 @@ starCountRef.on('value', (snapshot) =>{
  */
 
 
-
-
+function prod(){
+  window.location.href = `/produto/${id}`;
+}
 
 function editar(){
   window.location.href = `/edit/${id}`
@@ -89,9 +90,9 @@ const ProdutosCard = ({ produtos }) => {
             : null} */}
 
 
-          {/* <footer className="produtos-card__footer">   */}
+          
 
-            <button className="verP" onClick={() => window.location.href = `/produto/${id}`}> Ver Produto </button>
+            <button className="verP" onClick={() => verproduto(produtos) } onClick={prod}> Ver Produto </button>
           {/* <UIButton className="verP" component={Link} to={`/produto/${id}`}
             onClick={() => verproduto(produtos)}>
             Ver Produto
@@ -109,7 +110,7 @@ const ProdutosCard = ({ produtos }) => {
           {/* {isLogged() ? <div className="favorite" > Favoritar </div> : null} */}
 
 
-          {/* </footer>  */} 
+         
 
       
         {isLogged() ? <button onClick={() => handleDelete(produtos.id)} type="button" className="produtos-card__delete-button" > <BiTrash /> </button> : null}

@@ -76,9 +76,9 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'Produtos',
-    path: '/',
-    icon: <IoIcons.IoIosPaper />,
+    title: 'Cadastrar Queijaria',
+    path: '/cadastro',
+    icon: <BsIcons.BsArrowBarRight />,
     cName: 'nav-text'
   },
   {
@@ -91,12 +91,6 @@ export const SidebarData = [
     title: 'Rota do Queijo',
     path: '/rotaqueijo',
     icon: <AiIcons.AiFillCar />,
-    cName: 'nav-text'
-  },
-  {
-    title: 'Lista de Desejos',
-    path: '/desejos',
-    icon: <BsIcons.BsHeartFill />,
     cName: 'nav-text'
   },
   {

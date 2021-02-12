@@ -4,21 +4,34 @@
     display: flex;
     position: relative;
     justify-content: start;
-    align-items: center;
-   
-  }
-  .titulo{
-    padding-left: 30%;
-    color: #fff;
-    padding-right: 35%; 
-    width: 50%;
+    align-items: center; 
   }
 
-  @media only screen and (max-width: 600px) {
+.apro{
+  color:white;
+  /* font-size: 30px; */
+  margin-left: 38.7%;
+}
+  /* .titulo{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: cyan;
+    
+  } */
+   /* .titulo{
+    padding-left: 30%; 
+    color: #fff;
+    text-align: center;
+    padding-right: 35%; 
+    width: 50%; 
+  }  */
+
+  /* @media only screen and (max-width: 600px) {
     .titulo{
       padding-left: 23%;
     }
-  } 
+  }  */
 
   .logomenu{
     border-radius: 800px;

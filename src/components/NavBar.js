@@ -41,7 +41,9 @@ if (user != null) {
 
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
-          {<h1 className="titulo">APROQUEIJO</h1>}
+          
+          <h1 className="apro" >APROQUEIJO</h1>
+          
         </div>
 
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>

@@ -61,6 +61,7 @@
     font-size: 80%;
     margin-left: 15px;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 .favorite{
@@ -80,6 +81,7 @@
     flex: 1;
     white-space: nowrap; 
     border: 1px solid #060b26; 
+    cursor: pointer;
 }
 
 .produtos-card__delete-button{
