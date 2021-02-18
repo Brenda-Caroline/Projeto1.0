@@ -3,7 +3,7 @@
     flex-direction: column;
     margin-bottom: 15px;
     align-items: center;
-    border: 1px solid #060b26; 
+    /*  border: 1px solid #060b26;   */
     border-radius: 8px; 
     margin-top: 0%;
     margin-right: 5%;
@@ -17,6 +17,8 @@
 .Bot{
     text-align: center; 
     margin-top: 15px; 
+    
+    width: 50%; 
 } 
 
 .log{
@@ -50,14 +52,12 @@
 
 
 .blogin{
-    background-color: #060b26 ; 
-    border: none;
+    background-color: #060b26  ; 
+    border: none; 
     color:#fff;
     padding-right: 10%;
-    padding-left: 10%;
-    margin-bottom: 30px;
+    padding-left: 10%;    
+    margin-bottom: 30px; 
 }
 
-.link{ 
-    margin-top: 7%;
-}
+ 

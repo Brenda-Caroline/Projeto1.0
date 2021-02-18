@@ -81,20 +81,6 @@
     cursor: pointer;
 }
 
-.bot{
-    text-align: center;
-    background-color:  #060b26;
-    border: none;
-    color:#fff;
-    padding-left: 10%;
-    padding-right: 10%;
-    
-    
-}
-.botao{
-    text-align: center;
-    
-}
 
 .escolher{
     cursor: pointer;

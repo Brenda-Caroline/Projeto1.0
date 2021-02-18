@@ -100,14 +100,14 @@ const Form = ({ id }) => {
   };
 
 
-    function redireciona(){
+     function redireciona(){
       window.location.href = "/"
-    } 
+    }  
 
   return (
     <div className="App-form">
       <div className="produtos-title">
-        <h1 >É QUEIJO UAI</h1>
+        {/* <h1 >É QUEIJO UAI</h1> */}
         <h2 >Cadastrar novo Produto</h2>
       </div>
       {!values

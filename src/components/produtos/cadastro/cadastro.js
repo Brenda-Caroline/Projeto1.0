@@ -289,13 +289,13 @@ const Cadastro = ({ id }) => {
            
             <br></br>
             
-            <UIButton type="submit" className="btn"
+            
+            <div className="sal">
+              
+            <UIButton type="submit" className="button"
            onClick={onSubmit}>
           Cadastrar
                 </UIButton>
-            <div>
-              
-
             </div>
           </form>
         )}

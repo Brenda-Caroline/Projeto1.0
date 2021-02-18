@@ -7,31 +7,20 @@
     align-items: center; 
   }
 
-.apro{
-  color:white;
-  /* font-size: 30px; */
-  margin-left: 38.7%;
-}
-  /* .titulo{
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    background-color: cyan;
-    
-  } */
-   /* .titulo{
-    padding-left: 30%; 
-    color: #fff;
-    text-align: center;
-    padding-right: 35%; 
-    width: 50%; 
-  }  */
 
-  /* @media only screen and (max-width: 600px) {
-    .titulo{
-      padding-left: 23%;
-    }
-  }  */
+.apro{
+  text-align: center;
+  color: white; 
+  font-size: 35px; 
+  margin-left: 37.8%;
+}
+
+@media only screen and (max-width: 600px) {
+  .apro{
+    margin-left: 24.4%;
+    font-size:25px;
+  }
+} 
 
   .logomenu{
     border-radius: 800px;
@@ -55,12 +44,13 @@
     margin-left: 2rem;
     font-size: 2rem; 
     background: none;
+   
   }
 
   @media only screen and (max-width: 600px) {
     .menu-bars{
-      margin-left: 1rem;
-     
+      margin-left: 0.8rem;
+      font-size: 1.5rem; 
     }
   } 
   

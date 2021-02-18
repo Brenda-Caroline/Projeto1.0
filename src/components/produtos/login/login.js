@@ -88,11 +88,6 @@ const LoginForm = () => {
                 </UIButton>
 
                 <br></br>
-
-        <div className="link">
-        <a href="/cadastro" > Primeira vez por aqui? Crie uma conta gratuitamente! </a>
-
-        </div>
       </div>
       
     </div>
