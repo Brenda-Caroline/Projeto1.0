@@ -23,6 +23,7 @@ const verproduto = (produtos) => {
   localStorage.setItem('@src', produtos.src);
   localStorage.setItem('@quantidade', produtos.quantidade);
   localStorage.setItem('@queijaria', produtos.queijaria);
+  localStorage.setItem('@telefone', produtos.telefone);
   
 }
 /* 
@@ -91,24 +92,26 @@ const ProdutosCard = ({ produtos }) => {
 
 
           
-
-            <button className="verP" onClick={() => verproduto(produtos) } onClick={prod}> Ver Produto </button>
-          {/* <UIButton className="verP" component={Link} to={`/produto/${id}`}
-            onClick={() => verproduto(produtos)}>
+            <div className="botoes">
+            {/* <button className="verP" onClick={() => verproduto(produtos) } onClick={prod}> Ver Produto </button> */}
+           <UIButton className="verP"  component={Link} to={`/produto/${id}`}
+            onClick={() => verproduto(produtos)} >
             Ver Produto
-          </UIButton> */}
+          </UIButton> 
+          
           {/* function redireciona(){
       window.location.href = "/"
     }  */}
 
 
 
-           {isLogged() ?  <button className="btn-card__edit" onClick={ editar}>
+           {/* {isLogged() ?  <button className="btn-card__edit" onClick={ editar}>
             Editar</button> : null}  
-          
-          {/* <UIButton component={Link} to={`/edit/${id}`} className="btn-card__edit" >Editar</UIButton> */} 
+           */}
+            {isLogged() ? <UIButton component={Link} to={`/edit/${id}`} className="btn-card__edit" >Editar</UIButton> : null}  
           {/* {isLogged() ? <div className="favorite" > Favoritar </div> : null} */}
 
+        </div>
 
          
 

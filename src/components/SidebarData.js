@@ -75,12 +75,12 @@ export const SidebarData = [
     icon: <BsIcons.BsArrowBarRight />,
     cName: 'nav-text'
   },
-  {
+  /* {
     title: 'Cadastrar Queijaria',
     path: '/cadastro',
     icon: <BsIcons.BsArrowBarRight />,
     cName: 'nav-text'
-  },
+  }, */
   {
     title: 'História da Associação',
     path: '/associacao',

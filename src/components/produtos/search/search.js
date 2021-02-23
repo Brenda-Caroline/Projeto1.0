@@ -46,7 +46,7 @@ const ProdutosSearch = () => {
 
       <header className="produtos-search__header">
         <div className="titles">
-          <h1>Produtos Cadastrados - {produtos.length}</h1>
+          <h1>Produtos Cadastrados {/* - {produtos.length} */}</h1>
         </div>
         <div className="bt">
           <UIButton className="btn"

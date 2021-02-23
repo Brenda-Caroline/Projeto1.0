@@ -31,7 +31,7 @@ const Root = () => {
                 <PrivateRoute exact  path="/create" component={PagesProdutosForm} />
                 <Route exact path="/login" component={PagesLoginForm}/>
                 <Route exact path="/associacao" component={PagesAssociacao}/>
-                <Route exact  path="/edit/:id" component={PagesProdutosForm} />
+                <PrivateRoute exact  path="/edit/:id" component={PagesProdutosForm} />
                 <Route exact  path="/rotaqueijo" component={PagesRotaQueijo} />
                 
                 <Route exact  path="/cadastro" component={PagesCadastro} />

@@ -42,12 +42,17 @@
   font-weight: 700;
   color: #060b26;
   flex:1;
+  
 }
 
 .produtos-card__footer {
   margin-top: 5%;
   text-align: start; 
   margin-left: 5%;  
+}
+
+.botoes{
+  margin-top: 15px; 
 }
 
 .verP{
@@ -58,9 +63,10 @@
     flex: 1;
     white-space: nowrap; 
     border: 1px solid #060b26; 
-    font-size: 80%;
+    font-size: 100%;
     margin-left: 15px;
     margin-top: 10px;
+    margin-right: 3px;
     cursor: pointer;
 }
 
@@ -82,11 +88,12 @@
     white-space: nowrap; 
     border: 1px solid #060b26; 
     cursor: pointer;
+    
 }
 
 .produtos-card__delete-button{
   border: unset;
-  background-color: unset;
+  background-color: unset; 
   font-size: 25px;
   color: #060b26;
   position: absolute;

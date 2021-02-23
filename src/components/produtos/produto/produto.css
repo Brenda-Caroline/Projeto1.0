@@ -7,12 +7,27 @@
   display: block;
   margin-bottom: 20px;
   position: relative;
-  
 
-  
 }
 
 
+.button_envia{
+  background-color: unset;
+  border-radius: 4px;
+  text-decoration: none;
+  /* color: black; */
+  padding: 11px 12px 11px 12px; 
+  flex: 1;
+  white-space: nowrap;
+  color: #060b26; 
+  border: 1px solid currentColor;
+  margin-right: 10px;
+  font-size: 95%;
+  cursor: pointer;
+}
+.volta{
+margin-right: 5px;
+}
 .imgproduto{
   width: 25%;
   display: block;
@@ -24,6 +39,7 @@
   font-size: 25px;
   color: #060b26;
   text-align: center;
+  
 }
 
 .preco{
@@ -49,56 +65,71 @@
   
 }
 
+.telefone{
+  font-size: 22px;
+  font-weight: 700;
+  color: #060b26;
+  text-align: center;
+  
+}
+
 .descricao{
   font-size: 22px;
   font-weight: 700;
   color: #060b26;
   text-align: center;
+  
 }
 
 .botao{
   text-align: center; 
   margin-top: 5%;
   margin-bottom: 1%;
+  justify-content: center;
 }
 
-.produtos-card__footer {
+/* .produtos-card__footer {
   display: flex;
   align-items: center;
-}
+  
+} */
 
-.produtos-card__comment {
+/* .produtos-card__comment {
   color: #95A5A6;
   font-weight: 700;
-}
+  
+} */
 
-.produtos-card__comments-count {
+/* .produtos-card__comments-count {
   margin-left: auto;
   margin-right: 10px;
   color: #060b26;
-}
+  
+} */
 
-.produtos-card__link {
+/* .produtos-card__link {
   border: 1px solid #060b26;
   border-radius: 4px;
   color: #060b26;
   text-decoration: none;
   padding: 8px 10px;
   margin-right: 20px;
-}
+  
+} */
 
-.btn-card{
+/* .btn-card{
   align-items: center;
   justify-content: center;
   margin-left: 350px;
+  
+} */
 
-}
-
-.btn-card__edit{
+/* .btn-card__edit{
   margin-left: 8px;
-}
+  
+} */
 
-.produtos-card__delete-button{
+/* .produtos-card__delete-button{
   border: unset;
   background-color: unset;
   font-size: 25px;
@@ -106,4 +137,5 @@
   position: absolute;
   top: 8px;
   right: 8px;
-}
+  
+} */

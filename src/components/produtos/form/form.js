@@ -5,14 +5,14 @@ import { storage,database } from '../firebase/index.js';
 import './form.css';
 import swal from 'sweetalert';
 import { v4 as uuidv4 } from 'uuid';
-import UIButton from 'components/UI/Button/Button';
-import {Link} from "react-router-dom";
+
 
 
 const initialValue = {
   title: '',
   price: 0,
   quantidade: 0,
+  telefone:'', 
   imageUrl: '',
   descricao: '',
   queijaria:'',
@@ -58,6 +58,7 @@ const Form = ({ id }) => {
       queijaria:values.queijaria,
       price: values.price,
       quantidade: values.quantidade,
+      telefone: values.telefone, 
     }).then(()=>alert('Cadastrado com sucesso!')).catch((err)=>alert('Erro ao cadastrar: ' + err));
   
     
@@ -99,15 +100,15 @@ const Form = ({ id }) => {
     );
   };
 
+  const redireciona = ()=>{
+    window.location.href="/";
+  }
 
-     function redireciona(){
-      window.location.href = "/"
-    }  
 
   return (
     <div className="App-form">
       <div className="produtos-title">
-        {/* <h1 >É QUEIJO UAI</h1> */}
+        
         <h2 >Cadastrar novo Produto</h2>
       </div>
       {!values
@@ -127,6 +128,10 @@ const Form = ({ id }) => {
               <label htmlFor="quantidade">Quantidade</label>
               <input id="quantidade" name="quantidade" type="number" onChange={onChange} value={values.quantidade} />
             </div>
+             <div className="produtos-form__group">
+              <label htmlFor="telefone">Telefone para contato</label>
+              <input id="telefone" name="telefone" type="text" onChange={onChange} value={values.telefone} placeholder="(xx) xxxxx-xxxx" />
+            </div> 
             <div className="produtos-form__group">
               <label htmlFor="descricao">Descrição</label>
               <textarea id="descricao" name="descricao" type="textarea" onChange={onChange} value={values.descricao} placeholder="Insira a decrição do produto" />
@@ -157,22 +162,15 @@ const Form = ({ id }) => {
                 <br />
                 <br />
 
-                <input type="file" onChange={handleChange} className="escolher"/><br></br>
+                <input type="file" onChange={handleChange} /><br></br>
                 <button className="up" onClick={handleUpload}>Upload</button>
                 <br />
-                {/* {url} */}
+               
                 <br />
-                {/* <img src={url || "http://via.placeholder.com/300"} alt="firebase-image" width="120px" height="120px" /> */}
-              </div>
-              <div className="sal">
+                  </div>
+                  <div className="sal">
               <button className="produtos-form__group_salvar" type="submit" onClick={redireciona}> Salvar</button>
-                {/* <div className="botao">
-              {/* <UIButton className="produtos-form__group_salvar" type="submit">Salvar</UIButton> 
-                <UIButton className="bot" component={Link} to={"/"} theme="contained-green">
-                Salvar
-                </UIButton>
-                </div> */}
-                </div>
+              </div>
             
             </div>
             
