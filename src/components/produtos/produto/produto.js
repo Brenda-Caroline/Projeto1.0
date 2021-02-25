@@ -23,8 +23,8 @@ const Produto = ({ produtos}) => {
   const src = localStorage.getItem('@src');
   const queijaria = localStorage.getItem('@queijaria');
   const telefone = localStorage.getItem('@telefone');
-  
-  
+  const emailProduto = localStorage.getItem('@emailProduto');
+    
   
   const redireciona = ()=>{
     window.location.href=`https://api.whatsapp.com/send?phone=+55${telefone}&text=Olá, eu vim pela plataforma APROQUEIJO` ;
@@ -41,11 +41,10 @@ const Produto = ({ produtos}) => {
       <p><h2 className="descricao">{`Descrição: ${descricao} `}</h2></p>
       <p><h2 className="queijaria">{`Queijaria: ${queijaria} `}</h2></p>
       <p><h2 className="telefone">{`Telefone: ${telefone} `}</h2></p>
+      <p><h2 className="telefone">{`Email: ${emailProduto} `}</h2></p>
 
-      <p className="quantidade">
-        <h2></h2>
-
-      </p>
+      <p><h2 className="quantidade">{quantidade < 1 ? 'Sem estoque no momento' : `Quantidade disponível: ${quantidade}`}</h2></p>
+      
 
 
 

@@ -14,17 +14,15 @@ const ProdutosSearch = () => {
   const [produtos, setProdutos] = useState([]);
   const [produtosFiltered, setProdutosFiltered] = useState([]);
   const [search, setSearch] = useState('');
-  const temp = [];
 
-  const getData = async () => {
-    const data = await firebase.database().ref(`/produtos`);
-
-    data.on('value', snapshot => {
+  const getData = () => {
+    firebase.database().ref(`/produtos`).on('value', snapshot => {
+      const temp = [];
       snapshot.forEach((item) => {
         temp.push(item.val());
       })
+      setProdutos(temp)
     })
-    setProdutos(temp);
   }
 
   const handleFilter = (ev) => {
@@ -39,7 +37,6 @@ const ProdutosSearch = () => {
   useEffect(() => {
     getData();
   }, []);
-
   return (
 
     <div className="produtos-search">

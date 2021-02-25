@@ -16,6 +16,7 @@ const initialValue = {
   imageUrl: '',
   descricao: '',
   queijaria:'',
+  emailProduto:'',
 }
 
 const Form = ({ id }) => {
@@ -58,7 +59,8 @@ const Form = ({ id }) => {
       queijaria:values.queijaria,
       price: values.price,
       quantidade: values.quantidade,
-      telefone: values.telefone, 
+      telefone: values.telefone,
+      emailProduto:values.emailProduto, 
     }).then(()=>alert('Cadastrado com sucesso!')).catch((err)=>alert('Erro ao cadastrar: ' + err));
   
     
@@ -133,6 +135,10 @@ const Form = ({ id }) => {
               <input id="telefone" name="telefone" type="text" onChange={onChange} value={values.telefone} placeholder="(xx) xxxxx-xxxx" />
             </div> 
             <div className="produtos-form__group">
+              <label htmlFor="emailProduto">Email</label>
+              <input id="emailProduto" name="emailProduto" type="text" onChange={onChange} value={values.emailProduto} />
+            </div>
+            <div className="produtos-form__group">
               <label htmlFor="descricao">Descrição</label>
               <textarea id="descricao" name="descricao" type="textarea" onChange={onChange} value={values.descricao} placeholder="Insira a decrição do produto" />
             </div>
@@ -148,7 +154,7 @@ const Form = ({ id }) => {
                <option value="Queijaria da Dinda">Queijaria da Dinda</option>
                <option value="Queijaria Dona Saúde">Queijaria Dona Saúde</option>
                <option value="Queijaria Estrela da Serra">Queijaria Estrela da Serra</option>
-               <option value="Queijaria Rubi">Queijaria Rubi</option>
+               <option value="Rubi Queijaria">Rubi Queijaria </option>
                <option value="Requeijão Toko">Requeijão Toko</option>
 
             </select>

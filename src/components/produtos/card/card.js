@@ -24,7 +24,7 @@ const verproduto = (produtos) => {
   localStorage.setItem('@quantidade', produtos.quantidade);
   localStorage.setItem('@queijaria', produtos.queijaria);
   localStorage.setItem('@telefone', produtos.telefone);
-  
+  localStorage.setItem('@emailProduto', produtos.emailProduto);
 }
 /* 
 const deleting = () =>{
@@ -47,26 +47,47 @@ starCountRef.on('value', (snapshot) =>{
  */
 
 
-function prod(){
+/* function prod(){
   window.location.href = `/produto/${id}`;
 }
 
 function editar(){
   window.location.href = `/edit/${id}`
-}
+} */
 
 
 const ProdutosCard = ({ produtos }) => {
+  var user = firebase.auth().currentUser;
+  var email;
 
+
+  if(user!=null){
+    email = user.email;
+  }else{
+    email = " ";
+  }
+
+  
+
+  
+  
+    
+  
   const handleDelete = async (id) => {
     // alert(id)
+    if(produtos.emailProduto == email)
+    {
     try {
+
       await firebase.database().ref('/produtos/' + id).remove();
-      alert('Deletado com sucesso');
+      swal('Deletado com sucesso');
     } catch (error) {
       alert('Erro ao deletar: ' + error)
     }
+  }else{
+    swal("Você não possui permissão para excluir esse produto");
   }
+}
 
   return (
 
