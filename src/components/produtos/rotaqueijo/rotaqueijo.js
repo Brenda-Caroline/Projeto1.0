@@ -25,9 +25,29 @@ return(
 
         <Marker position={[-15.8313139, -43.0631696]}>
           <Popup>
-            JC Queijaria
+            Queijaria JC
           </Popup>
         </Marker>
+
+        <Marker position={[-15.8483828, -43.0622635]}>
+          <Popup>
+            Cida do Requeijão
+          </Popup>
+        </Marker>
+
+        <Marker position={[-15.6862958, -43.0337145]}>
+          <Popup>
+            Queijaria Rubi
+          </Popup>
+        </Marker>
+
+        <Marker position={[-15.6980593, -43.0234087]}>
+          <Popup>
+            Queijaria Dona Saúde
+          </Popup>
+        </Marker>
+
+        
       </MapContainer>
     </div>
 );

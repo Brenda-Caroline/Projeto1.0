@@ -148,12 +148,16 @@ const Form = ({ id }) => {
             
             <select  onChange={onChange} name="queijaria" id="queijaria" value={values.queijaria}>
                <option >Selecione a queijaria</option>
+               <option value="Abilio">Abílio</option>
+               <option value="Cida do Requeijão">Cida do Requeijão</option>
                <option value="Edson Mussarela">Edson Mussarela</option>
                <option value="JC Queijaria">JC Queijaria </option>
                <option value="Liu Queijaria">Liu Queijaria</option>
+               <option value="MG Queijaria">MG Queijaria</option>
                <option value="Queijaria da Dinda">Queijaria da Dinda</option>
                <option value="Queijaria Dona Saúde">Queijaria Dona Saúde</option>
                <option value="Queijaria Estrela da Serra">Queijaria Estrela da Serra</option>
+               <option value="Queijaria Minas FG">Queijaria Minas FG</option>
                <option value="Rubi Queijaria">Rubi Queijaria </option>
                <option value="Requeijão Toko">Requeijão Toko</option>
 

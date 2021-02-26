@@ -7,5 +7,16 @@
     border: 4px solid rgb(185, 147, 23);
 }
 
+.listaProd{
+     width: 100%; 
+}
+
+.tit{
+    text-align: center;
+}
+
+.text{
+    text-align: justify;
+}
 
 
