@@ -1,12 +1,20 @@
 import React, {Component} from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import './rotaqueijo.css';
+import UIButton from 'components/UI/Button/Button';
+import { Link } from "react-router-dom";
 
 const RotaQueijo = () => {
 
 return(
   <div style={{ height: 800 }}>
-    <h1>Rota do Queijo em Porteirinha</h1>
-      <MapContainer style={{ height: 800 }} center={[-15.794600, -43.054010]} zoom={13} scrollWheelZoom={false}>
+    <h1 className="h1">Rota do Queijo em Porteirinha</h1>
+    <div className="botVolta">
+    <UIButton component={Link} to={'/'} className="voltar"> Voltar </UIButton>
+    </div>
+    {/* <br></br>
+    <br></br> */}
+      <MapContainer className="map" /* style={{ height: 800 }} */ center={[-15.794600, -43.054010]} zoom={13} scrollWheelZoom={false}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

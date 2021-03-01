@@ -104,15 +104,13 @@ flex:1;
 .titles{
  padding-right: 20%; 
 /* margin-left: 80px; */
-  
+ font-family: serif; 
  width: 60%;
 }
 
-/* @media only screen and (max-width: 400px) {
+ @media only screen and (max-width: 600px) {
 .titles{
- /* background-color: yellow; 
- font-size: 70%;
- margin-left: 80px;
- 
+ /* margin-left: 3px; */
+ width: 50%;
 }
-} */
+ }

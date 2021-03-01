@@ -4,6 +4,9 @@ import 'firebase/auth';
 import 'firebase/database';
 import 'firebase/storage';
 import swal from 'sweetalert';
+import './perfil.css';
+import UIButton from 'components/UI/Button/Button';
+import { Link } from "react-router-dom";
 
 
 const Perfil = () => {
@@ -62,18 +65,26 @@ const getDataProdutos = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Perfil</h1>
+    <div className="quadrado">
+      <h1 className="titH1">Perfil</h1>
 
-      <h2>{`Usuario: ${user.email}`}</h2>
-      <h2>{`Email: ${email}`}</h2>
-      <h2>{`Produtor: ${nomeprodutor}`}</h2>
-      <h2>{`Queijaria: ${nomequeijaria}`}</h2>
-      <h2>{`Endereco: ${endereco}`}</h2>
-      <h2>{`Telefone: ${telefone}`}</h2>
+      <p className="dados"><b>{`Usuario: `}</b>{user.email}</p>
+      <p className="dados"><b>{`Email: `}</b>{email}</p>
+      <p className="dados"><b>{`Produtor: `}</b>{nomeprodutor}</p>
+      <p className="dados"><b>{`Queijaria: `}</b>{nomequeijaria}</p>
+      <p className="dados"><b>{`Endereco: `}</b>{endereco}</p>
+      <p className="dados"><b>{`Telefone: `}</b>{telefone}</p>
+     {/*  <h3>{`Email: `}</h3>{email}
+      <h3>{`Produtor: `}</h3>{nomeprodutor}
+      <h3>{`Queijaria: `}</h3>{nomequeijaria}
+      <h3>{`Endereco: `}</h3>{endereco}
+      <h3>{`Telefone: `}</h3>{telefone} */}
       {/* <h2>{`Meus produtos:`}</h2>
       <h4>{`${nome}`}</h4> */}
       
+      <div className="volt">
+      <UIButton component={Link} to={'/'} > Voltar </UIButton>
+      </div>
     </div>
 
   )
